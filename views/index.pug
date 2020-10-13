@@ -1,5 +1,10 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  .homePage
+    h1= title
+    p Welcome to #{title}
+  .searchBar
+    form.searchRelatedArtist.ui.big.form(action= '/twitter' method = 'get')
+      input.searchRelatedArtistBox(type='text' placeholder = 'Search Keyword' name = 'search')
+      button.searchRelatedArtistButton.ui.button(type = 'submit') Submit
