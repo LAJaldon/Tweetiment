@@ -1,10 +1,40 @@
 extends layout
 
 block content
-    .contentPage    
-        h1 Positive
-            p #{positiveTweets}
-        h1 Neutral 
-            p #{neutralTweets}
-        h1 Negative 
-            p #{negativeTweets}
+    - const happyFace = 'images/Happy_face.png';
+    - const neutralFace = 'images/Neutral_face.png';
+    - const angryFace = 'images/Angry_face.png';
+    a(href = '/')
+            button.ui.black.button Home
+    .newSearchBar
+            form.searchRelatedArtist.ui.big.form(action= '/twitter' method = 'get')
+                input.searchRelatedArtistBox(type='text' required placeholder = 'Search Keyword' name = 'search')
+                button.searchRelatedArtistButton.ui.button(type = 'submit') Submit
+    if tweetsCount === 0
+        h1 no tweets found for #{searchQuery}
+    else
+        .contentPage    
+            h1 Results for @#{searchQuery} out of #{tweetsCount} tweets
+            .countArea
+                h1 Positive Tweets Percentage
+                img.emojiFace(src= happyFace width =100 height =100)
+                p.count #{positiveTweetsPercentage}%
+                h2 Sample Tweets
+                each tweet in positiveTweetsArray
+                    p #{tweet}
+            .countArea
+                h1 Neutral Tweets Percentage
+                img.emojiFace(src= neutralFace width=100 height=100)
+                p.count #{neutralTweetsPercentage}%
+                h2 Sample Tweets
+                each tweet in neutralTweetsArray
+                    p #{tweet}
+            .countArea
+                h1 Negative Tweets Percentage
+                img.emojiFace(src = angryFace width=100 height=100) 
+                p.count #{negativeTweetsPercentage}%
+                h2 Sample Tweets
+                each tweet in negativeTweetsArray   
+                    p #{tweet}
+
+        

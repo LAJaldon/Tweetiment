@@ -3,8 +3,12 @@ extends layout
 block content
   .homePage
     h1= title
-    p Welcome to #{title}
   .searchBar
     form.searchRelatedArtist.ui.big.form(action= '/twitter' method = 'get')
-      input.searchRelatedArtistBox(type='text' placeholder = 'Search Keyword' name = 'search')
+      input.searchRelatedArtistBox(type='text' required placeholder = 'Search Keyword' name = 'search')
       button.searchRelatedArtistButton.ui.button(type = 'submit') Submit
+  .trendingTopics 
+    h1 Trending Topics in Australia
+    each topic in trendingTopicsArray 
+      h2 #{topic}
+      

@@ -6,3 +6,36 @@ body {
 a {
   color: #00B7FF;
 }
+
+.ui.black.button{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+
+.emojiFace{
+  margin-left: 5%;
+  margin-bottom: 2%;
+}
+
+.newSearchBar{
+  margin-bottom: 3%;
+}
+
+.count{
+  margin-left: 7%;
+  font-size: x-large;
+}
+
+.contentPage{
+  margin-bottom: 5%;
+}
+
+.countArea{
+  margin-bottom: 2%;
+  padding-bottom: 2%;
+  border-bottom: 2px solid black;
+}
+
+
+
