@@ -36,9 +36,18 @@ a {
 
 .searchBar{
   margin-bottom: 3%;
-  display: inline;
-  resize: both;
-  overflow: auto;
+  width: 40%;
+  text-align: center;
+  position: relative;
+  left: 30%;
+}
+
+.container{
+  clear: both;
+}
+
+.searchButton.ui.orange.basic.button{
+  clear: both;
 }
 
 .trends{
@@ -64,6 +73,10 @@ a {
   margin-left: 3%;
   font-size: x-large;
   color: white;
+}
+
+.trendingTopics{
+  text-align: center;
 }
 
 .tweetText{

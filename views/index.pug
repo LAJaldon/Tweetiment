@@ -7,9 +7,11 @@ block content
     img.titleBanner(src = twitterLogo height = 100 width=400)
   .searchBar 
     h2.homeHeading Enter hashtag for sentiment analysis:
-    form.seachForm.ui.big.form(action= '/twitter' method = 'get')
-      input.searchBox(type='text' required placeholder = 'Search Keyword' name = 'search')
-      button.searchButton.ui.button(type = 'submit') Submit
+    form.searchRelatedArtist.ui.big.form(action= '/twitter' method = 'get')
+      .container
+         input.searchBox(type='text' required placeholder = 'Search Keyword' name = 'search')
+      .submitButton
+          button.searchButton.ui.orange.basic.button(type = 'submit') Submit
   .trendingTopics 
     h1.homeHeading Trending Topics in Australia
     each topic in trendingTopicsArray 
