@@ -35,13 +35,6 @@ a {
   color: white;
 }
 
-.searchbarHeading {
-  position: relative;
-  left: -25%;
-  color: white;
-  margin-bottom: 2%;
-}
-
 .searchBar{
   margin-bottom: 3%;
   width: 40%;
