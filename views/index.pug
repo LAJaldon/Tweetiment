@@ -1,14 +1,18 @@
 extends layout
 
 block content
+  - const twitterLogo = 'images/banner_Snipped.JPG'
   .homePage
-    h1= title
-  .searchBar
-    form.searchRelatedArtist.ui.big.form(action= '/twitter' method = 'get')
-      input.searchRelatedArtistBox(type='text' required placeholder = 'Search Keyword' name = 'search')
-      button.searchRelatedArtistButton.ui.button(type = 'submit') Submit
+    p.titleText=title
+    img.titleBanner(src = twitterLogo height = 100 width=400)
+  .searchBar 
+    h2.homeHeading Enter hashtag for sentiment analysis:
+    form.seachForm.ui.big.form(action= '/twitter' method = 'get')
+      input.searchBox(type='text' required placeholder = 'Search Keyword' name = 'search')
+      button.searchButton.ui.button(type = 'submit') Submit
   .trendingTopics 
-    h1 Trending Topics in Australia
+    h1.homeHeading Trending Topics in Australia
     each topic in trendingTopicsArray 
-      h2 #{topic}
+      a(href = `twitter?search=${topic}`)
+        h2.trends #{topic}
       

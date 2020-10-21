@@ -1,40 +1,84 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #161819;
 }
 
 a {
   color: #00B7FF;
 }
 
-.ui.black.button{
-  position: absolute;
-  top: 0%;
-  left: 0%;
+.titleText{
+  color: #8EF2FF;
+  float: left;
+  font-size: 450%;
+  left: 50%;
+  padding: 0 0 0 180px;
+  padding-right: 3%;
+}
+
+.titleBanner{
+  clear: both;
+}
+
+.homePage{
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-top: 2px solid #E36E40;
+  border-bottom: 2px solid #E36E40;
+}
+
+.homeHeading{
+  color: white;
+}
+
+.searchBar{
+  margin-bottom: 3%;
+  display: inline;
+  resize: both;
+  overflow: auto;
+}
+
+.trends{
+  color: #8EF2FF;
+  padding-bottom: 2%;
 }
 
 .emojiFace{
-  margin-left: 5%;
+  margin-left: 2%;
   margin-bottom: 2%;
+  border-radius: 50%;
 }
 
 .newSearchBar{
   margin-bottom: 3%;
 }
 
+.resultText{
+  color:  #8EF2FF;
+}
+
 .count{
-  margin-left: 7%;
+  margin-left: 3%;
   font-size: x-large;
+  color: white;
+}
+
+.tweetText{
+  color: white;
 }
 
 .contentPage{
   margin-bottom: 5%;
+  text-align: center;
 }
 
 .countArea{
   margin-bottom: 2%;
   padding-bottom: 2%;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid orange;
 }
 
 

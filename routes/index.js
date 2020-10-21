@@ -112,7 +112,7 @@ router.get('/', function (req, res, next) {
         topicsArrayCount++;
       }
 
-      res.render('index', { title: 'Tweet Sentiment Analysis', trendingTopicsArray });
+      res.render('index', { title: 'TWEETIMENT', trendingTopicsArray });
     }
   });
 
