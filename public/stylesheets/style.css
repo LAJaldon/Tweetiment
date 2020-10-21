@@ -12,13 +12,14 @@ a {
   color: #8EF2FF;
   float: left;
   font-size: 450%;
-  left: 50%;
+  text-align: center;
   padding: 0 0 0 180px;
   padding-right: 3%;
 }
 
 .titleBanner{
   clear: both;
+  align-self: center;
 }
 
 .homePage{
@@ -32,6 +33,13 @@ a {
 
 .homeHeading{
   color: white;
+}
+
+.searchbarHeading {
+  position: relative;
+  left: -25%;
+  color: white;
+  margin-bottom: 2%;
 }
 
 .searchBar{

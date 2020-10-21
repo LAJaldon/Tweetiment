@@ -13,8 +13,8 @@ block content
         .homePage
             p.titleText TWEETIMENT
             img.titleBanner(src = twitterLogo height = 100 width=400)
+        h2.searchbarHeading Enter hashtag for sentiment analysis:
         .searchBar 
-            h2.homeHeading Enter hashtag for sentiment analysis:
             form.searchRelatedArtist.ui.big.form(action= '/twitter' method = 'get')
                 .container
                     input.searchBox(type='text' required placeholder = 'Search Keyword' name = 'search')
