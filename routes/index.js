@@ -18,7 +18,7 @@ var client = new Twitter({
 
 
 // This section will change for Cloud Services
-const redisClient = redis.createClient();
+//const redisClient = redis.createClient();
 
 // Cloud Services Set-up
 // Create unique bucket name
@@ -30,9 +30,9 @@ const redisClient = redis.createClient({
   port: 6379
 });
 
-// redisClient.on('error', (err) => {
-//   console.log("Error" + err);
-// });
+redisClient.on('error', (err) => {
+  console.log("Error" + err);
+});
 
 function getTweets(tweets, searchQuery) {
   const tweetsCount = tweets.statuses.length;
