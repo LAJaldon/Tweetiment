@@ -33,9 +33,9 @@ function getTweets(tweets, searchQuery) {
   let positiveTweets = 0;
   let negativeTweets = 0;
   let neutralTweets = 0;
-  let positiveTweetsArray = new Array(2);
-  let neutralTweetsArray = new Array(2);
-  let negativeTweetsArray = new Array(2);
+  let positiveTweetsArray = [];
+  let neutralTweetsArray = [];
+  let negativeTweetsArray = [];
   let positiveArrayCount = 0;
   let neutralArrayCount = 0;
   let negativeArrayCount = 0;
@@ -50,21 +50,21 @@ function getTweets(tweets, searchQuery) {
     //console.log(sentimentScore);
 
     if (sentimentScore > 0) {
-      positiveTweets = positiveTweets + 1;
+      positiveTweets++;
       positiveArrayCount++;
       if (positiveArrayCount < 4) {
         positiveTweetsArray[positiveArrayCount] = tweets.statuses[i].text;
       }
     }
     else if (sentimentScore === 0) {
-      neutralTweets = neutralTweets + 1;
+      neutralTweets++;
       neutralArrayCount++;
       if (neutralArrayCount < 4) {
         neutralTweetsArray[neutralArrayCount] = tweets.statuses[i].text;
       }
     }
     else {
-      negativeTweets = negativeTweets + 1;
+      negativeTweets++;
       negativeArrayCount++;
       if (negativeArrayCount < 4) {
         negativeTweetsArray[negativeArrayCount] = tweets.statuses[i].text;
@@ -92,7 +92,7 @@ function getTweets(tweets, searchQuery) {
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  let trendingTopicsArray = new Array(16);
+  let trendingTopicsArray = [];
   let topicsArrayCount = 0;
 
   googleTrends.realTimeTrends({
@@ -105,11 +105,13 @@ router.get('/', function (req, res, next) {
       const trends = JSON.parse(results);
 
       for (var i = 0; i < trends.storySummaries.trendingStories.length; i++) {
-        trendingTopicsArray[topicsArrayCount] = trends.storySummaries.trendingStories[i].entityNames[0];
-        //console.log(trends.storySummaries.trendingStories[i].entityNames[0])
-        //console.log(trendingTopicsArray[topicsArrayCount]);
-        //console.log(topicsArrayCount);
-        topicsArrayCount++;
+        for (var j = 0; j < trends.storySummaries.trendingStories[i].entityNames.length; j++) {
+          trendingTopicsArray[topicsArrayCount] = trends.storySummaries.trendingStories[i].entityNames[j];
+          //console.log(trends.storySummaries.trendingStories[i].entityNames[0])
+          //console.log(trendingTopicsArray[topicsArrayCount]);
+          //console.log(topicsArrayCount);
+          topicsArrayCount++;
+        }
       }
 
       res.render('index', { title: 'TWEETIMENT', trendingTopicsArray });
