@@ -24,9 +24,15 @@ const redisClient = redis.createClient();
 // Create unique bucket name
 const bucketName = 'luigijaldon-wikipedia-store';
 
-redisClient.on('error', (err) => {
-  console.log("Error" + err);
+// For cloud Server
+const redisClient = redis.createClient({
+  host: 'n10000381-001.km2jzi.0001.apse2.cache.amazonaws.com',
+  port: 6379
 });
+
+// redisClient.on('error', (err) => {
+//   console.log("Error" + err);
+// });
 
 function getTweets(tweets, searchQuery) {
   const tweetsCount = tweets.statuses.length;
